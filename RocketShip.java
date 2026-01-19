@@ -4,8 +4,8 @@ public class RocketShip {
     public static final int ROCKET_SIZE = 3;
     
     public static void main( String[] args ) {
-        printNoseCone();
-        printBody();
+       // printNoseCone(); // /**\
+       // printBody();
         printNozzle();
     }
 
@@ -14,9 +14,29 @@ public class RocketShip {
      This reuses the pattern of the nose cone.
      */
     public static void printNozzle() {
-        printNoseCone();
+        printNozzle();
+        for (int line = 1; line <= ROCKET_SIZE * 2 - 1; line ++) {
+            // print spaces 
+            for (int spaces = 1; spaces <= ROCKET_SIZE * 2 - 1 - line; spaces ++) { 
+                System.out.print(" "); 
+            }
+            
+            // print left slashes 
+            for (int slashes = 1; slashes <= line; slashes ++) {
+                System.out.print("/"); 
+            }
+            //print the stars in the middle 
+            System.out.print("**");
+            // print right slashes
+            for (int slashes = 1; slashes <= line; slashes++) {
+                System.out.print("\\");
+            }
+
+            // move onto next line 
+            System.out.println();
+        }
     }
-    
+
     /**
      Print the nose cone. There is a pattern of **
      down the middle of the cone with a widening pattern
@@ -65,3 +85,34 @@ public class RocketShip {
         System.out.println("An edge should be here.");
     }
 }
+
+
+/*
+```
+     /**\
+    //**\\
+   ///**\\\
+  ////**\\\\
+ /////**\\\\\
++=*=*=*=*=*=*+
+|../\..../\..|
+|./\/\../\/\.|
+|/\/\/\/\/\/\|
+|\/\/\/\/\/\/|
+|.\/\/..\/\/.|
+|..\/....\/..|
++=*=*=*=*=*=*+
+|\/\/\/\/\/\/|
+|.\/\/..\/\/.|
+|..\/....\/..|
+|../\..../\..|
+|./\/\../\/\.|
+|/\/\/\/\/\/\|
++=*=*=*=*=*=*+
+     /**\
+    //**\\
+   ///**\\\
+  ////**\\\\
+ /////**\\\\\
+```
+ */
